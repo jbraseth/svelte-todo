@@ -1,9 +1,14 @@
 <script>
 	export let name;
+    export let count = 0;
+    function setCount() {
+      count += 1
+    }
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
+    <button on:click="{setCount}">{count}</button>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
@@ -27,4 +32,7 @@
 			max-width: none;
 		}
 	}
+    button {
+      padding: var(--padding-top) 0.7em var(--padding-top) 0.7em;
+    }
 </style>
