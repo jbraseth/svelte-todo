@@ -42,8 +42,17 @@ export default {
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
-			}
-		}),
+			},
+            onwarn: (warning, handler) => {
+            //   This is where you could disable warnings
+              if (warning.code === "a11y-no-redundant-roles") {
+                return;
+              }
+        
+              // let Rollup handle all other warnings normally
+              handler(warning);
+            },
+        }),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
@@ -54,7 +63,7 @@ export default {
 		// consult the documentation for details:
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
-			browser: true,
+            browser: true,
 			dedupe: ['svelte'],
 			exportConditions: ['svelte']
 		}),
