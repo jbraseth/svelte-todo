@@ -37,9 +37,9 @@
 <div class="stack-small">
   {#if editing}
     <!-- markup for editing todo: label, input text, Cancel and Save Button -->
-    <form on:submit|preventDefault={onSave} class="stack-small" on:keydown={(e) => e.key === 'Escape' && onCancel()}>
+    <form on:submit|preventDefault={onSave} class="stack-small" on:keydown={(e) => e.key === "Escape" && onCancel()}>
       <div class="form-group">
-        <label for="todo-{todo.id}" class="todo-label">New name for '{todo.name}'</label>
+        <label for="todo-{todo.id}" class="todo-label">New name for "{todo.name}"</label>
         <input bind:value={name} type="text" id="todo-{todo.id}" autoComplete="off" class="todo-text" />
       </div>
       <div class="btn-group">
