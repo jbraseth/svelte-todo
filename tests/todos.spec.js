@@ -14,7 +14,7 @@ import {
 } from "../src/playwright/todos-helpers";
 
 // Setup each test with 2/3 completed To-Dos
-test.beforeAll(async ({ todosPage }) => {
+test.beforeEach(async ({ todosPage }) => {
   await deleteTodos(todosPage);
   await addTodos(todosPage);
   await checkTodos(todosPage, 2);
@@ -33,7 +33,7 @@ test.describe("todos features", () => {
 
   test("add", async ({ todosPage }) => {
     await addTodos(todosPage);
-    expect(await todosPage.locator("ul.todo-list li").count()).toBe(5);
+    expect(await todosPage.locator("ul.todo-list li").count()).toBe(6);
   });
 
   test("check", async ({ todosPage }) => {
@@ -65,7 +65,7 @@ test.describe("todos features", () => {
 
     // Filter by all
     await filters.getByRole("button", { name: "All" }).click();
-    expect(await getTodos(todosPage).count()).toBe(2);
+    expect(await getTodos(todosPage).count()).toBe(3);
 
     // Filter by active
     await filters.getByRole("button", { name: "Active" }).click();
@@ -73,11 +73,9 @@ test.describe("todos features", () => {
 
     // Filter by completed
     await filters.getByRole("button", { name: "Completed" }).click();
-    expect(await getTodos(todosPage).count()).toBe(1);
+    expect(await getTodos(todosPage).count()).toBe(2);
   });
-});
 
-test.describe("more actions", async () => {
   test("remove completed", async ({ todosPage }) => {
     await todosPage.getByRole("button", { name: "Remove completed" }).click();
     expect(await getTodos(todosPage).count()).toBe(1);
@@ -85,7 +83,7 @@ test.describe("more actions", async () => {
 
   test("check all/uncheck all", async ({ todosPage }) => {
     await todosPage.getByRole("button", { name: "Check all" }).click();
-    expect(await countCompletedTodos(todosPage)).toBe(2);
+    expect(await countCompletedTodos(todosPage)).toBe(3);
     await todosPage.getByRole("button", { name: "Uncheck all" }).click();
     expect(await countCompletedTodos(todosPage)).toBe(0);
   });
