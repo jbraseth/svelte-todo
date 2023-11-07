@@ -1,4 +1,4 @@
-![main](https://github.com/jbraseth/svelte-todo/actions/workflows/todos.yml/badge.svg)
+![main](https://github.com/jbraseth/svelte-todo/actions/workflows/todos.yaml/badge.svg)
 
 # svelte app
 
