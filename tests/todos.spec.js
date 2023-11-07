@@ -33,7 +33,7 @@ test.describe("todos features", () => {
 
   test("add", async ({ todosPage }) => {
     await addTodos(todosPage);
-    expect(await todosPage.locator("ul.todo-list li").count()).toBe(6);
+    expect(await todosPage.locator("ul.todo-list li").count()).toBe(5);
   });
 
   test("check", async ({ todosPage }) => {
@@ -65,7 +65,7 @@ test.describe("todos features", () => {
 
     // Filter by all
     await filters.getByRole("button", { name: "All" }).click();
-    expect(await getTodos(todosPage).count()).toBe(3);
+    expect(await getTodos(todosPage).count()).toBe(2);
 
     // Filter by active
     await filters.getByRole("button", { name: "Active" }).click();
@@ -73,7 +73,7 @@ test.describe("todos features", () => {
 
     // Filter by completed
     await filters.getByRole("button", { name: "Completed" }).click();
-    expect(await getTodos(todosPage).count()).toBe(2);
+    expect(await getTodos(todosPage).count()).toBe(1);
   });
 });
 
@@ -85,7 +85,7 @@ test.describe("more actions", async () => {
 
   test("check all/uncheck all", async ({ todosPage }) => {
     await todosPage.getByRole("button", { name: "Check all" }).click();
-    expect(await countCompletedTodos(todosPage)).toBe(3);
+    expect(await countCompletedTodos(todosPage)).toBe(2);
     await todosPage.getByRole("button", { name: "Uncheck all" }).click();
     expect(await countCompletedTodos(todosPage)).toBe(0);
   });
