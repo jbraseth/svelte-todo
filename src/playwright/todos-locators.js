@@ -5,9 +5,7 @@ export function getTodos(page) {
 }
 
 export function getCheckboxes(page) {
-  return page
-    .locator("ul.todo-list li")
-    .getByRole("checkbox");
+  return page.locator("ul.todo-list li").getByRole("checkbox");
 }
 
 export async function countCompletedTodos(page) {

@@ -1,6 +1,6 @@
 import { defineConfig } from "@playwright/test";
 
-import { HEADLESS } from "./src/playwright/constants"
+import { HEADLESS } from "./src/playwright/constants";
 
 export default defineConfig({
   use: {

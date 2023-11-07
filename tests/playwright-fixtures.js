@@ -1,6 +1,6 @@
 import { test as baseTest } from "@playwright/test";
 
-import { PAGE_TIMEOUT, URI } from "../src/playwright/constants"
+import { PAGE_TIMEOUT, URI } from "../src/playwright/constants";
 
 export const test = baseTest.extend({
   todosPage: async ({ page }, use) => {
