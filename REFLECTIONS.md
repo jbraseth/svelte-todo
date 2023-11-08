@@ -4,10 +4,10 @@
 
 ## what you enjoyed about using the chosen framework
 
-> Disclaimer: I messed with React and Vue a bit, and messed with Juice Shop enough to get a sense for Angular. I didn't take my time as much as I could have going through the tutorial, so I still only have a very basic knowledge of this framework.
+> Disclaimer: I didn't take my time as much as I could have going through the tutorial, so I still only have a very basic knowledge of this framework.
 
 ### Fireship uses it!
-I think very highly of Fireship from YouTube, and he loves Svelte so it was a clear choice for me.
+We did some React and Vue a bit in class, and I messed with Juice Shop enough to get a sense for Angular. Svelte was a clear choice for me though, because I think very highly of Fireship from YouTube, and he loves Svelte.
 
 ### Web development is awesome in general
 This is the coolest assignment I've ever had. I want to go deeper into web development with bootcamps, the Odin Project, so I'll take whatever I can get my hands on to grow in this area.
